@@ -1,18 +1,9 @@
-import { fetchList } from './content.js';
-import { fetchScore } from './score.js';
-import route from './routes.js';
-import store from './store.js';
+import List from './pages/List.js';
+import Leaderboard from './pages/Leaderboard.js';
+import Roulette from './pages/Roulette.js';
 
-const app = Vue.createApp({
-    data() {
-        return {
-            store,
-        };
-    },
-    mounted() {
-        document.title = 'The Purple List';
-    },
-});
-
-app.use(route);
-app.mount('#app');
+export default [
+    { path: '/', component: List },
+    { path: '/leaderboard', component: Leaderboard },
+    { path: '/roulette', component: Roulette },
+];
