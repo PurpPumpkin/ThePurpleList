@@ -1,9 +1,8 @@
-import List from './pages/List.js';
-import Leaderboard from './pages/Leaderboard.js';
-import Roulette from './pages/Roulette.js';
+import List from '/ThePurpleList/js/pages/List.js';
+import Leaderboard from '/ThePurpleList/js/pages/Leaderboard.js';
+import Roulette from '/ThePurpleList/js/pages/Roulette.js';
 
 export default VueRouter.createRouter({
-    // Changed to Hash History to fix the static subfolder routing bug
     history: VueRouter.createWebHashHistory(),
     routes: [
         { path: '/', component: List },
