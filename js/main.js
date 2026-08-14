@@ -1,21 +1,18 @@
-import routes from './routes.js';
+import { fetchList } from './content.js';
+import { fetchScore } from './score.js';
+import route from './routes.js';
+import store from './store.js';
 
-export const store = Vue.reactive({
-    dark: JSON.parse(localStorage.getItem('dark')) || false,
-    toggleDark() {
-        this.dark = !this.dark;
-        localStorage.setItem('dark', JSON.stringify(this.dark));
+const app = Vue.createApp({
+    data() {
+        return {
+            store,
+        };
+    },
+    mounted() {
+        document.title = 'The Purple List';
     },
 });
 
-const app = Vue.createApp({
-    data: () => ({ store }),
-});
-const router = VueRouter.createRouter({
-    history: VueRouter.createWebHashHistory(),
-    routes,
-});
-
-app.use(router);
-
+app.use(route);
 app.mount('#app');
